@@ -7,7 +7,10 @@ print(f'Downloading playlist: {py.title}')
 for video in py.videos:
 
     try:
+        # For video
         # video.streams.filter(res='720p', file_extension='mp4').first().download()
+
+        # For just audio
         video.streams.filter(only_audio=True).first().download()
         print(f'Downloaded: {video.title}')
     except:
